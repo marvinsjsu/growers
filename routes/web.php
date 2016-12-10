@@ -18,3 +18,24 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+
+Route::group(['middleware' => 'auth'], function() {
+
+	/**
+	 * Routes for Posts
+	 */
+	Route::resource('posts', 'PostsController', ['only' => [
+    	'index', 'show', 'create', 'destroy'
+	]]);
+
+	Route::get('posts/{id}/edit', 'PostsController@edit');
+	Route::post('posts/{id}/update', 'PostsController@update');	
+
+	/**
+	 * Routes for Comments
+	 */
+	Route::resource('comments', 'CommentsController', ['only' => [
+    	'index', 'show', 'create', 'store', 'edit', 'update', 'destroy'
+	]]);
+});
