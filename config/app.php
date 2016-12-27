@@ -167,6 +167,7 @@ return [
          * Package Service Providers...
          */
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
+        Former\FormerServiceProvider::class,
         //
 
         /*
@@ -206,6 +207,7 @@ return [
         'Eloquent' => Illuminate\Database\Eloquent\Model::class,
         'Event' => Illuminate\Support\Facades\Event::class,
         'File' => Illuminate\Support\Facades\File::class,
+        'Former' => Former\Facades\Former::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,
         'Lang' => Illuminate\Support\Facades\Lang::class,
