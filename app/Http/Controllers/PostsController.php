@@ -12,7 +12,8 @@ class PostsController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        $user = Auth::user();
+        $posts = Post::where('author_id', $user->id)->get();
 
         return view('posts.index', ['posts' => $posts]);
     }
@@ -30,11 +31,12 @@ class PostsController extends Controller
 
     public function store(Request $request)
     {
-        $request['user_id'] = Auth::user()->id;
-        $request['status'] = 'red';
-        $request['done'] = false;
-        
-        return Post::create($request->all());        
+
+        dd($request);
+        $request['author_id'] = Auth::user()->id;
+        $post = Post::create($request->all());    
+
+        return view('posts.show', ['post' => $post]);    
     }
 
     public function edit($id) 

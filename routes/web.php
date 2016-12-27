@@ -18,6 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/blog', 'BlogsController@index');
+Route::get('/stories', 'StoriesController@index');
 
 
 Route::group(['middleware' => 'auth'], function() {

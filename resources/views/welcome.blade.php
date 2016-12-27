@@ -21,6 +21,29 @@
                 margin: 0;
             }
 
+            body {
+                background-image: url(img/growers_bg.png);
+  
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+  
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+  
+  /* This is what makes the background image rescale based
+     on the container's size 
+   background-size: cover;
+   */
+  
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: #fff;
+            }
+
             .full-height {
                 height: 100vh;
             }
@@ -47,10 +70,11 @@
 
             .title {
                 font-size: 84px;
+                color: #fff;
             }
 
             .links > a {
-                color: #636b6f;
+                color: #fff;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -62,12 +86,16 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .grey > a {
+                color: #636b6f;
+            }
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right links grey">
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Home</a>
                     @else
@@ -82,8 +110,9 @@
                     Growers
                 </div>
                 <div class="links">
-                    <a href="{{ url('/posts') }}">Blog</a>
+                    <a href="{{ url('/blog') }}">Stories</a>
                     <a href="{{ url('/articles') }}">Articles</a>
+                    <a href="{{ url('/artisans') }}">Artists</a>
                 </div>
             </div>
         </div>
