@@ -8,7 +8,10 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    <ul>
+                        <li><a href=" {{ url('/posts') }} ">Manage my posts</a></li>
+                        <li><a href=" {{ url('/articles') }} ">Manage my articles</a></li>
+                    </ul>
                 </div>
             </div>
         </div>

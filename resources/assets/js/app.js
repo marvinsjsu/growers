@@ -19,6 +19,3 @@ const app = new Vue({
     el: '#app'
 });
 
-$(document).ready(function() {
-  $('#summernote').summernote();
-});
