@@ -13,7 +13,7 @@ class AddSoftdeletesToPosts extends Migration
      */
     public function up()
     {
-        //
+
     }
 
     /**
