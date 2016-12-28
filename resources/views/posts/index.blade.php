@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Posts - 
+                    My  Posts - 
                     <a href="{{ url('posts/create') }}">Create a Post</a>
                 </div>
 
@@ -14,7 +14,7 @@
 
                     <table class="table table-striped table-hover">
                         @foreach ($posts as $post)
-                            <tr
+                            <tr>
                                 <td>{{ $post->title }}</td>
                                 <td>{{ $post->author }}</td>
                                 <td>{{ $post->status }}</td>
