@@ -18,7 +18,6 @@ class Post extends Model
     	'date_modified',
     	'status',
     	'type',
-        'deleted',
         'author_id',
     ];
 

@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/blog', 'BlogsController@index');
-Route::get('/stories', 'StoriesController@index');
+//Route::get('/stories', 'StoriesController@index');
 
 
 Route::group(['middleware' => 'auth'], function() {
@@ -28,7 +28,7 @@ Route::group(['middleware' => 'auth'], function() {
 	 * Routes for Posts
 	 */
 	Route::resource('posts', 'PostsController', ['only' => [
-    	'index', 'show', 'create', 'destroy'
+    	'index', 'show', 'create', 'store', 'edit', 'update', 'destroy'
 	]]);
 
 	Route::get('posts/{id}/edit', 'PostsController@edit');

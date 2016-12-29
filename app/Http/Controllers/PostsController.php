@@ -31,19 +31,19 @@ class PostsController extends Controller
 
     public function store(Request $request)
     {
-
-        dd($request);
         $request['author_id'] = Auth::user()->id;
+        $request['status'] = "draft";
+        $request['type'] = "blog";
         $post = Post::create($request->all());    
 
-        return view('posts.show', ['post' => $post]);    
+        return redirect()->route('posts.index')->with('success', 'New Setting Created: ' . $post->title);   
     }
 
     public function edit($id) 
     {
         $post = Post::find($id);
 
-        return view('post.edit', ['post' => $post]);
+        return view('posts.edit', ['post' => $post]);
     }
 
     public function update(Request $request, $id)

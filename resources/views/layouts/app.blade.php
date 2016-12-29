@@ -88,7 +88,12 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
 <script>
 $(document).ready(function() {
-  $('#summernote').summernote();
+  $('#summernote').summernote({
+      height: 300,                 // set editor height
+      minHeight: null,             // set minimum height of editor
+      maxHeight: null,             // set maximum height of editor
+      focus: true 
+  });
 
 });
 </script>
