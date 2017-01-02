@@ -32,7 +32,6 @@
 
                         <div id="create">
                             <button type="submit" name="save-post" id="save-post" class="btn btn-primary">Save</button>
-                            <button type="button" id="cancel-create-case" class="btn btn-link cancelForm" value="/posts/index">Cancel</button>
                         </div>
                         <div id="create_holder" class="btn btn-info hide">
                             Saving

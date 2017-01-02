@@ -33,6 +33,10 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::get('posts/{id}/edit', 'PostsController@edit');
 	Route::post('posts/{id}/update', 'PostsController@update');	
+	Route::post('posts/{id}/publish', [
+			"as" => 'posts.publish',
+			"uses" => 'PostsController@publish'
+		]);
 
 	/**
 	 * Routes for Comments

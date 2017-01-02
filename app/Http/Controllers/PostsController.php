@@ -36,7 +36,7 @@ class PostsController extends Controller
         $request['type'] = "blog";
         $post = Post::create($request->all());    
 
-        return redirect()->route('posts.index')->with('success', 'New Setting Created: ' . $post->title);   
+        return redirect()->route('posts.index')->with('success', 'New post created: ' . $post->title);   
     }
 
     public function edit($id) 
@@ -58,5 +58,22 @@ class PostsController extends Controller
     {
     	$post = Post::find($id);
         $post->delete();
+
+        return redirect()->route('posts.index')->with('success', 'Post has been deleted: ' . $post->title); 
+    }
+
+    public function publish($id)
+    {
+        $post = Post::find($id);
+        
+        if ($post->status == "draft") {
+            $post->status = "publish";
+        } else {
+            $post->status = "draft";
+        }
+
+        $post->save();
+
+        return redirect()->route('posts.index')->with('success', 'Post has been ' . $post->status);            
     }
 }

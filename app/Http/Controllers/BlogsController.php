@@ -9,7 +9,7 @@ class BlogsController extends Controller
 {
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->get();
+        $posts = Post::where('status', 'publish')->orderBy('created_at', 'desc')->get();
 
         return view('blogs.index', ['posts' => $posts]);
     }

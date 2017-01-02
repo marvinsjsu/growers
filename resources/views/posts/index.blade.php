@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     My  Posts - 
@@ -29,14 +29,18 @@
                                 <td>{{ $post->updated_at }}</td>
                                 <td>{{ $post->status }}</td>
                                 <td>
-
-                                    <a href="{{ route('posts.edit', $post->id) }}">Edit</a> |
-                                    <a href="{{ route('posts.destroy', $post->id) }}">Delete</a> |
-                                    @if ($post->status == "draft")
-                                        <a href="">Publish</a>
-                                    @else 
-                                        <a href="">Un-publish</a>
-                                    @endif
+                                    <?= Former::horizontal_open(route('posts.destroy', $post->id))->id('posts_edit_form')->method("DELETE") ?>
+                                    <a class="btn-link" href="{{ route('posts.edit', $post->id) }}">Edit</a> 
+                                    <button type="submit" name="delete-post" id="delete-post" class="btn-link">Delete</button>
+                                    <?= Former::close() ?>
+                                    <?= Former::horizontal_open(route('posts.publish', $post->id))->id('posts_edit_form')->method("POST") ?>
+                                                                        
+                                        @if ($post->status == "draft")
+                                            <button type="submit" name="publish-post" id="publish-post" class="btn-link">Publish</button>
+                                        @else 
+                                            <button type="submit" name="unpublish-post" id="unpublish-post" class="btn-link">Un-publish</button>
+                                        @endif
+                                    <?= Former::close() ?>
                                 </td>
                             </tr>
                         @endforeach                        

@@ -50,12 +50,8 @@
                     <div class="form-actions">
 
                         <div id="create">
-                            <button type="submit" name="create-setting" id="create-setting" class="btn btn-primary">Create</button>
-                            <button type="button" id="cancel-create-case" class="btn btn-link cancelForm" value="/admin/settings">Cancel</button>
+                            <button type="submit" name="create-setting" id="create-setting" class="btn btn-primary">Create</button> 
                         </div>
-                        <div id="create_holder" class="btn btn-info hide">
-                            Saving
-                            <div class="loading"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div>
                         </div>
                     </div>
                     <div class="clear">&nbsp;</div>

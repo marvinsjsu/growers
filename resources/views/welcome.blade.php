@@ -23,7 +23,7 @@
 
             body {
                 background-image: url(img/growers_bg.png);
-  
+                padding-left: 50px;
   /* Background image is centered vertically and horizontally at all times */
   background-position: center center;
   
@@ -70,6 +70,7 @@
 
             .title {
                 font-size: 84px;
+                font-weight: 500;
                 color: #fff;
             }
 
@@ -106,12 +107,11 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
+                <div class="title">
                     Grown By
                 </div>
                 <div class="links">
                     <a href="{{ url('/blog') }}">Stories</a>
-                    <a href="{{ url('/articles') }}">Articles</a>
                     <a href="{{ url('/artisans') }}">Artists</a>
                 </div>
             </div>
