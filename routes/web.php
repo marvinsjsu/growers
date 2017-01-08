@@ -17,8 +17,21 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', [
+		"as" => 'home.index',
+		"uses" => 'HomeController@index'
+	]);
 Route::get('/blog', 'BlogsController@index');
+Route::post('/subscribe/store', [
+		"as" => 'subscribe.store',
+		"uses" => 'SubscriptionsController@store'
+	]);
+Route::get('/subscribe/activate/{id}', [
+		"as" => 'subscribe.activate',
+		"uses" => 'SubscriptionsController@activate'
+	]);
+
+Route::get('/test/{view}', 'SubscriptionsController@test');
 //Route::get('/stories', 'StoriesController@index');
 
 

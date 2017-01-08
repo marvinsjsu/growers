@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Grown By:',
+    'name' => 'GrownBy',
 
     /*
     |--------------------------------------------------------------------------
@@ -228,6 +228,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
+        'Uuid' => Webpatser\Uuid\Uuid::class,
     ],
 
 ];
