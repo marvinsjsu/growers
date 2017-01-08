@@ -120,18 +120,18 @@ return [
     |
     */
 
-    'redis' => [
+    // 'redis' => [
 
-        'cluster' => false,
+    //     'cluster' => false,
 
-        'default' => [
-            'host' => env('REDIS_HOST'),
-            'port' => env('REDIS_PORT'),
-            'password' => env('REDIS_PASSWORD'),
-            'database' => 0,
-        ],
+    //     'default' => [
+    //         'host' => env('REDIS_HOST'),
+    //         'port' => env('REDIS_PORT'),
+    //         'password' => env('REDIS_PASSWORD'),
+    //         'database' => 0,
+    //     ],
 
-    ],
+    // ],
 
 
 ];
