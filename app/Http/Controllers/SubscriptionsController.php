@@ -16,10 +16,10 @@ class SubscriptionsController extends Controller
 	    ]);   	
 
         $subscription = Subscription::firstOrCreate([
-        		'email' => $request['email'],
-        		'status' => "subscribe",
-                'uuid' => Uuid::generate(),
-        	]);
+    		'email' => $request['email'],
+    		'status' => "subscribe",
+            'uuid' => Uuid::generate(),
+        ]);
 
         event(new SubscribeEvent($subscription));
 
@@ -32,28 +32,31 @@ class SubscriptionsController extends Controller
         $subscription = Subscription::where('uuid', $id);
 
         if (!empty($subscription)) {
+
             $subscription->update(['status' => "activated"]);
             return redirect('/blog')->with('success', 'Welcome, your subscription has been activated.'); 
         } else {
+     
             return redirect()->route('posts.index')->with('fail', 'Something went wrong, please try again at another time.'); 
         }
     }
-
     public function deactivate($id)
     {
          $subscription = Subscription::where('uuid', $id);
 
         if (!empty($subscription)) {
+     
             $subscription->update(['status' => "deactivated"]);
             return redirect('/blog')->with('success', 'Welcome, your subscription has been deactivated.'); 
         } else {
+     
             return redirect()->route('posts.index')->with('fail', 'Something went wrong, please try again at another time.'); 
         }       
     }
 
     public function test($view) 
     {
-        //dd($view);
+
         return view('emails.activation');
     }
 }
