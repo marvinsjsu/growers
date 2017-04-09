@@ -1810,7 +1810,7 @@
             }
 
             .image:before {
-                background: url("public/css/images/overlay.png");
+                background: url("/css/images/overlay.png");
                 content: '';
                 height: 100%;
                 left: 0;
@@ -2134,7 +2134,7 @@
 
             .wrapper.style2 {
                 background-color: #83d3c9;
-                background-image: url("public/cssimages/light-bl.svg"), url("public/css/images/light-br.svg");
+                background-image: url("/css/images/light-bl.svg"), url("/css/images/light-br.svg");
                 background-position: bottom left, bottom right;
                 background-repeat: no-repeat, no-repeat;
                 background-size: 25em, 25em;
@@ -2424,7 +2424,7 @@
                 background-color: #645862;
                 /*background-color: #fff;*/
                 /*background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../../images/growers_bg.png");*/
-                background-image: url("public/css/images/light-bl.svg"), url("public/css/images/light-br.svg"), url("public/css/images/overlay.png"), url("../../../images/banner.jpg");
+                background-image: url("/css/images/light-bl.svg"), url("/css/images/light-br.svg"), url("/css/images/overlay.png"), url("/img/banner.jpg");
                 /*background-image: url("../../images/growers_bg.png");*/
 
                 background-position: bottom left, bottom right, top left, top center;
@@ -3329,7 +3329,7 @@
                     <div class="6u 12u(narrower)">
 
                         <section>
-                            <a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+                            <a href="#" class="image featured"><img src="/images/pic01.jpg" alt="" /></a>
                             <header>
                                 <h3><!--[-->Marijuana Horticulture<!--]--></h3>
                             </header>
@@ -3340,7 +3340,7 @@
                     <div class="6u 12u(narrower)">
 
                         <section>
-                            <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+                            <a href="#" class="image featured"><img src="/images/pic02.jpg" alt="" /></a>
                             <header>
                                 <h3><!--[-->Seeds of the Future<!--]--></h3>
                             </header>
@@ -3353,7 +3353,7 @@
                     <div class="6u 12u(narrower)">
 
                         <section>
-                            <a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+                            <a href="#" class="image featured"><img src="/images/pic03.jpg" alt="" /></a>
                             <header>
                                 <h3><!--[-->Journey Towards Weed<!--]--></h3>
                             </header>
@@ -3364,7 +3364,7 @@
                     <div class="6u 12u(narrower)">
 
                         <section>
-                            <a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+                            <a href="#" class="image featured"><img src="/images/pic04.jpg" alt="" /></a>
                             <header>
                                 <h3><!--[-->Here Goes Nothing!<!--]--></h3>
                             </header>
