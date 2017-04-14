@@ -57,4 +57,6 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::resource('comments', 'CommentsController', ['only' => [
     	'index', 'show', 'create', 'store', 'edit', 'update', 'destroy'
 	]]);
+
+	Route::get('admin/oauth', 'Admin\PassportController@index');
 });

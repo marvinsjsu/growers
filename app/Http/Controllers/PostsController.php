@@ -16,6 +16,7 @@ class PostsController extends Controller
         $posts = Post::where('author_id', $user->id)->get();
 
         return view('posts.index', ['posts' => $posts]);
+//        return response()->json(['posts' => $posts]);
     }
 
     public function show($id)
