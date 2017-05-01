@@ -87,7 +87,7 @@
                 </div>
                 <footer>
                     <ul class="buttons vertical">
-                        <li><a href="{{ route('stories.all') }}" class="button fit scrolly"><!--[-->Read our stories<!--]--></a></li>
+                        <li><a href="#main" class="button fit scrolly"><!--[-->Read our stories<!--]--></a></li>
                     </ul>
                 </footer>
 
