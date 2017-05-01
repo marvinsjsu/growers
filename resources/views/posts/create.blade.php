@@ -28,7 +28,13 @@
                   
                   -->
 
-                <?= Former::open_vertical(route('posts.store'))->id('posts_create_form')->method('POST')->role("form") ?>
+                <?= Former::vertical_open_for_files(route('posts.store'))
+                            ->id('posts_create_form')
+                            ->method('POST')
+                            ->role("form")
+                            ->rules(array("image" => "image"))
+                    ?>
+                    {{ csrf_field() }}
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
@@ -39,13 +45,32 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
+                            <?= Former::textarea('summary')->required()->rows(3)->required() ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
                           <?= Former::textarea('body')->id('summernote')->rows(15)->required() ?>
                         </div>
                     </div>
                 </div>
-
-
-
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <?= Former::file('image')->required() ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <?= Former::radios('radio')
+                                    ->radios(array('draft' => 'Draft', 'publish' => 'Publish')) ?>
+                        </div>
+                    </div>
+                </div>
                 <div id="create_form_holder">
                     <div class="form-actions">
 

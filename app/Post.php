@@ -19,6 +19,9 @@ class Post extends Model
     	'status',
     	'type',
         'author_id',
+        'image_url',
+        'resized_url',
+        'summary',
     ];
 
     public function comments() 
