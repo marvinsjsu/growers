@@ -7,6 +7,8 @@ use App\Post;
 use App\Comment;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
+use Image;
 
 class PostsController extends Controller
 {
@@ -17,6 +19,19 @@ class PostsController extends Controller
 
         return view('posts.index', ['posts' => $posts]);
 //        return response()->json(['posts' => $posts]);
+    }
+
+    public function all()
+    {
+        $posts = Post::where('status', 'publish')->get();
+        $posts->sortByDesc('created_at');
+
+        $modified_posts = $posts->map(function($post, $key) {
+            $post->summary = implode(" ", array_slice(explode(" ", $post->summary), 0, 35));
+            return $post;
+        });
+
+        return view('posts.all', ['posts' => $modified_posts]);
     }
 
     public function show($id)
@@ -33,10 +48,43 @@ class PostsController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $imageName = time().'.'.$request->file('image')->getClientOriginalExtension();
+        $image = $request->file('image');
+
+        $t = Storage::disk('s3')->put($imageName, file_get_contents($image), 'public');
+        $s3_original = Storage::disk('s3')->url($imageName);
+
+
+        $resizedImage = Image::make('images/banner.jpg');
+
+//        dd($resizedImage);
+//
+//        $resizedImageName = time().'_300x200.'.$request->file('image')->getClientOriginalExtension();
+//        $t = Storage::disk('s3')->put($resizedImageName, file_get_contents($resizedImage), 'public');
+//        $s3_300x200 = Storage::disk('s3')->url(resizedImageName);
+
+
+
+
+
+//        dd($imageName);
+
         $request['author_id'] = Auth::user()->id;
         $request['status'] = "draft";
         $request['type'] = "blog";
-        $post = Post::create($request->all());    
+        $request['image_url'] = $s3_original;
+//        $request['resized_url'] = $s3_300x200;
+
+        $post = Post::create($request->all());
+
+//        $imageName = $post->id . '.' . $request->file('image')->getClientOriginalExtension();
+//        $request->file('image')->move(
+//            base_path() . '/public/images/catalog/', $imageName
+//        );
 
         return redirect()->route('posts.index')->with('success', 'New post created: ' . $post->title);   
     }

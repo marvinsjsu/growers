@@ -11,9 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[
+		"as" => "welcome.index",
+		"uses" => "WelcomeController@index"
+	]);
+
+Route::get('/stories', [
+	"as" => 'stories.all',
+	"uses" => 'PostsController@all'
+]);
+
+Route::get('/posts/{id}', [
+	"as" => 'post.show',
+	"uses" => 'PostsController@show'
+]);
 
 Auth::routes();
 
@@ -21,6 +32,7 @@ Route::get('/home', [
 		"as" => 'home.index',
 		"uses" => 'HomeController@index'
 	]);
+
 Route::get('/blog', 'BlogsController@index');
 Route::post('/subscribe/store', [
 		"as" => 'subscribe.store',
@@ -41,7 +53,11 @@ Route::group(['middleware' => 'auth'], function() {
 	 * Routes for Posts
 	 */
 	Route::resource('posts', 'PostsController', ['only' => [
-    	'index', 'show', 'create', 'store', 'edit', 'update', 'destroy'
+    	'index', 'create', 'store', 'edit', 'update', 'destroy'
+	]]);
+
+	Route::resource('pictures', 'PicturesController', ['only' => [
+		'index', 'create', 'store', 'edit', 'update', 'destroy'
 	]]);
 
 	Route::get('posts/{id}/edit', 'PostsController@edit');
