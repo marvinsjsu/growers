@@ -59,7 +59,7 @@
                 appropriate (<br />).
             -->
             <div class="inner">
-
+                <br/>
                 <header>
                     <h2>Grown By</h2>
                 </header>
@@ -75,19 +75,22 @@
 
                                                     </div>
                                                 </div> -->
-                    <p>
-                        >> our bud picture here <<
-                    </p>
-                    <p>
-                        >> subscription field and button here <<
-                    </p>
-                    <br/>
-                    <br/>
+
+
                     <br/>
                 </div>
+                <p class="">
+                    organic marijuana <br/>
+                    through sustainable means <br/>
+                    &amp; <br/>
+                    a community of<br/>
+                    local artisan growers
+
+                </p>
+
                 <footer>
                     <ul class="buttons vertical">
-                        <li><a href="#main" class="button fit scrolly"><!--[-->Read our stories<!--]--></a></li>
+                        <li><a href="#main" class="button small fit scrolly">Our cultivating journey</a></li>
                     </ul>
                 </footer>
 
@@ -101,7 +104,7 @@
             <section class="wrapper style3 container special">
 
                 <header class="major">
-                    <h2><!--[-->Growing:<!--]--> <strong><!--[-->My Journey in Cultivating<!--]--></strong></h2>
+                    <h2><!--[-->Growing:<!--]--> <strong><!--[-->The Journey in Cultivating<!--]--></strong></h2>
                 </header>
 
 
@@ -128,7 +131,7 @@
 
                 <footer class="major">
                     <ul class="buttons">
-                        <li><a href="{{ route('stories.all') }}" class="button">See More</a></li>
+                        <li><a href="{{ route('stories.all') }}" class="button">Read more stories</a></li>
                     </ul>
                 </footer>
 
@@ -152,7 +155,7 @@
                     <div class="12u 12u(narrower)">
 
                         <header>
-                            <h2>Marijuan Buds</h2>
+                            <h2>Marijuana Buds</h2>
                         </header>
                         <p> >> Sample 1 w/ picture << </p>
                         <footer>
